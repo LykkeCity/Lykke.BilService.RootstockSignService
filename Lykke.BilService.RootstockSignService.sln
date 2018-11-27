@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.BilService.RootstockSignService", "src\Lykke.BilService.RootstockSignService\Lykke.BilService.RootstockSignService.csproj", "{C8CE51E4-8C1E-4ED3-AD71-FF74E3A984BC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{06B74137-A4B2-4023-8029-571265E0F14C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,8 @@ Global
 		{C8CE51E4-8C1E-4ED3-AD71-FF74E3A984BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8CE51E4-8C1E-4ED3-AD71-FF74E3A984BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8CE51E4-8C1E-4ED3-AD71-FF74E3A984BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C8CE51E4-8C1E-4ED3-AD71-FF74E3A984BC} = {06B74137-A4B2-4023-8029-571265E0F14C}
 	EndGlobalSection
 EndGlobal

@@ -3,16 +3,17 @@ using JetBrains.Annotations;
 using Lykke.BilService.RootstockSignService.Settings;
 using Lykke.Quintessence.Settings;
 using Lykke.Quintessence.Utils;
+using Lykke.SettingsReader;
 
 namespace Lykke.BilService.RootstockSignService.Modules
 {
     [UsedImplicitly]
     public class RootstockSignServiceModule : Module
     {
-        private readonly AppSettings<RootstockSignServiceSettings> _appSettings;
+        private readonly IReloadingManager<AppSettings<RootstockSignServiceSettings>> _appSettings;
 
         public RootstockSignServiceModule(
-            AppSettings<RootstockSignServiceSettings> appSettings)
+            IReloadingManager<AppSettings<RootstockSignServiceSettings>> appSettings)
         {
             _appSettings = appSettings;
         }
@@ -21,7 +22,7 @@ namespace Lykke.BilService.RootstockSignService.Modules
             ContainerBuilder builder)
         {
             builder
-                .RegisterRootstock(_appSettings.SignService.IsMainNet);
+                .RegisterRootstock(_appSettings.CurrentValue.SignService.IsMainNet);
         }
     }
 }

@@ -1,9 +1,9 @@
 using Autofac;
 using JetBrains.Annotations;
 using Lykke.BilService.RootstockSignService.Settings;
-using Lykke.Quintessence.Core.Utils;
+using Lykke.Quintessence.Core.DependencyInjection;
+using Lykke.Quintessence.DependencyInjection;
 using Lykke.Quintessence.Settings;
-using Lykke.Quintessence.Utils;
 using Lykke.SettingsReader;
 
 namespace Lykke.BilService.RootstockSignService.Modules
@@ -25,8 +25,8 @@ namespace Lykke.BilService.RootstockSignService.Modules
             var chainId = _appSettings.CurrentValue.SignService.IsMainNet ? 30 : 31;
             
             builder
-                .RegisterChainId(chainId)
-                .RegisterRootstockAddChecksumStrategy();
+                .UseChainId(chainId)
+                .UseRootstockAddChecksumStrategy();
         }
     }
 }

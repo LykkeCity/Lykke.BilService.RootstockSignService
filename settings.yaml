@@ -1,6 +1,6 @@
 SignService:
   IsMainNet:
-    settings-key: Rootstock-IsMainNet
+    settings-key: Bcn-RBTC-IsMainNet
 MonitoringServiceClient:
   MonitoringServiceUrl:
     settings-key: MonitoringServiceUrl

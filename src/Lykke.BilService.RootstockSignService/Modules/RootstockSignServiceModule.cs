@@ -2,7 +2,7 @@ using Autofac;
 using JetBrains.Annotations;
 using Lykke.BilService.RootstockSignService.Settings;
 using Lykke.Quintessence.Core.DependencyInjection;
-using Lykke.Quintessence.DependencyInjection;
+using Lykke.Quintessence.Domain.Services.DependencyInjection;
 using Lykke.Quintessence.Settings;
 using Lykke.SettingsReader;
 

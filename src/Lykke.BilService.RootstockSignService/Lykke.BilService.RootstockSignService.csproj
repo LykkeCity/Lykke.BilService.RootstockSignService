@@ -3,12 +3,20 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp2.1</TargetFramework>
-        <LangVersion>7.1</LangVersion>
+        <NoWarn>1701;1702;1705;1591</NoWarn>
+        <LangVersion>latest</LangVersion>
+        <Version>1.0.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Lykke.Quintessence.Rootstock" Version="0.0.2-beta" />
-      <PackageReference Include="Lykke.Quintessence.SignService" Version="0.0.2-beta" />
+        <None Update="Dockerfile">
+            <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Lykke.Quintessence.Rootstock.DomainServices" Version="1.0.0" />
+      <PackageReference Include="Lykke.Quintessence.SignService" Version="1.0.0" />
     </ItemGroup>
 
 </Project>

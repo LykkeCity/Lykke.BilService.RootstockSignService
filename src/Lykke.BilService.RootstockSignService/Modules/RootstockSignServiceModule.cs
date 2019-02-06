@@ -1,18 +1,20 @@
 using Autofac;
 using JetBrains.Annotations;
 using Lykke.BilService.RootstockSignService.Settings;
+using Lykke.Quintessence.Core.DependencyInjection;
+using Lykke.Quintessence.Domain.Services.DependencyInjection;
 using Lykke.Quintessence.Settings;
-using Lykke.Quintessence.Utils;
+using Lykke.SettingsReader;
 
 namespace Lykke.BilService.RootstockSignService.Modules
 {
     [UsedImplicitly]
     public class RootstockSignServiceModule : Module
     {
-        private readonly AppSettings<RootstockSignServiceSettings> _appSettings;
+        private readonly IReloadingManager<AppSettings<RootstockSignServiceSettings>> _appSettings;
 
         public RootstockSignServiceModule(
-            AppSettings<RootstockSignServiceSettings> appSettings)
+            IReloadingManager<AppSettings<RootstockSignServiceSettings>> appSettings)
         {
             _appSettings = appSettings;
         }
@@ -20,8 +22,11 @@ namespace Lykke.BilService.RootstockSignService.Modules
         protected override void Load(
             ContainerBuilder builder)
         {
+            var chainId = _appSettings.CurrentValue.SignService.IsMainNet ? 30 : 31;
+            
             builder
-                .RegisterRootstock(_appSettings.SignService.IsMainNet);
+                .UseChainId(chainId)
+                .UseRootstockAddChecksumStrategy();
         }
     }
 }

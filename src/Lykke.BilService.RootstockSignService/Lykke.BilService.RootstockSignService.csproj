@@ -15,8 +15,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Lykke.Quintessence.Rootstock.DomainServices" Version="0.0.38-beta" />
-      <PackageReference Include="Lykke.Quintessence.SignService" Version="0.0.38-beta" />
+      <PackageReference Include="Lykke.Quintessence.Rootstock.DomainServices" Version="1.0.0" />
+      <PackageReference Include="Lykke.Quintessence.SignService" Version="1.0.0" />
     </ItemGroup>
 
 </Project>
